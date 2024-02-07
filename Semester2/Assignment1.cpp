@@ -1,4 +1,3 @@
-
 #include <iostream>
 using namespace std;
 int askQuestion(string questions[],string options[20][4],string correct_Options[],int &correct, char choice){
@@ -93,8 +92,13 @@ int correct=0;
 do{
     askQuestion(questions,options,correct_Options,correct,choice);
     cout << "Overall Score : " << correct << " out of 20" << endl;
+    do {
     cout << "Do you want to play again? (y or n): ";
     cin >> restart;
-}while (restart !='n');
+    if(restart != 'y' && restart != 'Y' && restart != 'n' && restart != 'N'){
+        cout << "Enter the valid input!" << endl;
+    }
+} while (restart != 'y' && restart != 'Y' && restart != 'n' && restart != 'N');
+}while (restart !='n' && restart !='N');
     return 0;
 }
